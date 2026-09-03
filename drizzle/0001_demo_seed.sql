@@ -1,0 +1,15 @@
+INSERT OR IGNORE INTO events VALUES ('evt-morocco-2026','CFE-MA-2026','2026-morocco','2026年中国-非洲经贸博览会走进非洲（摩洛哥专场）','摩洛哥专场',2026,'卡萨布兰卡','摩洛哥','Africa/Casablanca','2026-11-18T09:00:00+01:00','2026-11-20T18:00:00+01:00','PREPARING','李敏',3,'2026-08-20T09:00:00+08:00','2026-08-28T10:30:00+08:00');
+--> statement-breakpoint
+INSERT OR IGNORE INTO registration_activities VALUES ('reg-main','evt-morocco-2026','专业观众报名','STAFF_REVIEW',3,'OPEN','2026-08-20T09:30:00+08:00','2026-08-28T10:00:00+08:00');
+--> statement-breakpoint
+INSERT OR IGNORE INTO portal_pages VALUES ('page-home','evt-morocco-2026','home','展会首页','HOME','PUBLISHED','pv-home-2',2,'2026-08-20T10:00:00+08:00','2026-08-28T09:00:00+08:00');
+--> statement-breakpoint
+INSERT OR IGNORE INTO portal_page_versions VALUES ('pv-home-2','evt-morocco-2026','page-home',2,'zh-CN','[{"type":"hero","title":"中非经贸合作的新通道"},{"type":"stats"},{"type":"agenda"},{"type":"map"}]','更新主视觉和报名入口','PUBLISHED','王珊','赵强','2026-08-27T16:00:00+08:00','2026-08-27T14:00:00+08:00','2026-08-27T16:00:00+08:00');
+--> statement-breakpoint
+INSERT OR IGNORE INTO review_tasks VALUES ('review-001','evt-morocco-2026','门户内容','PORTAL_PAGE','page-home','pv-home-3','首页法语版本更新','王珊',NULL,'PENDING',NULL,'2026-08-28T09:20:00+08:00',NULL,'2026-08-28T09:20:00+08:00','2026-08-28T09:20:00+08:00'), ('review-002','evt-morocco-2026','展商资料','EVENT_EXHIBITOR','exhibitor-002',NULL,'Atlas Green 展商资料变更','陈伟',NULL,'PENDING',NULL,'2026-08-28T10:05:00+08:00',NULL,'2026-08-28T10:05:00+08:00','2026-08-28T10:05:00+08:00');
+--> statement-breakpoint
+INSERT OR IGNORE INTO registration_records VALUES ('person-001','evt-morocco-2026','reg-main','account-001','张明','138****2048','中国','华南智能制造有限公司','APPROVED','微信公众号','2026-08-26T14:30:00+08:00',1,'2026-08-26T14:30:00+08:00','2026-08-27T09:10:00+08:00'), ('person-002','evt-morocco-2026','reg-main','account-002','Yasmine El Amrani','+212 6** *** 218','摩洛哥','Maghreb Trade Partners','PENDING','展会门户','2026-08-28T08:42:00+08:00',1,'2026-08-28T08:42:00+08:00','2026-08-28T08:42:00+08:00'), ('person-003','evt-morocco-2026','reg-main','account-003','刘青','186****7721','中国','湘非供应链服务有限公司','CHECKED_IN','定向邀请','2026-08-25T11:18:00+08:00',2,'2026-08-25T11:18:00+08:00','2026-08-28T10:18:00+08:00');
+--> statement-breakpoint
+INSERT OR IGNORE INTO enterprises VALUES ('enterprise-001','华南智能制造有限公司','South China Intelligent Manufacturing Co., Ltd.','中国','CN-DEMO-001','138****2048','ACTIVE','2026-08-21T09:00:00+08:00','2026-08-27T09:00:00+08:00'), ('enterprise-002','阿特拉斯绿色科技','Atlas Green Technologies','摩洛哥','MA-DEMO-002','+212 6** *** 889','ACTIVE','2026-08-22T10:00:00+08:00','2026-08-28T09:50:00+08:00');
+--> statement-breakpoint
+INSERT OR IGNORE INTO event_exhibitors VALUES ('exhibitor-001','evt-morocco-2026','enterprise-001','APPROVED','PUBLISHED',6,'A-018','企业自助填报',2,'2026-08-21T09:30:00+08:00','2026-08-27T09:00:00+08:00'), ('exhibitor-002','evt-morocco-2026','enterprise-002','PENDING','PUBLISHED',4,'B-006','工作人员录入',3,'2026-08-22T10:30:00+08:00','2026-08-28T10:05:00+08:00');

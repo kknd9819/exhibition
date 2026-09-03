@@ -1,0 +1,24 @@
+services:
+  mysql:
+    image: mysql:8.0.39
+    container_name: exhibition-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: exhibition
+      MYSQL_USER: exhibition
+      MYSQL_PASSWORD: exhibition
+      MYSQL_ROOT_PASSWORD: local-root-change-me
+      TZ: Asia/Shanghai
+    ports:
+      - "3306:3306"
+    command: [ "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci" ]
+    volumes:
+      - exhibition_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-plocal-root-change-me" ]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  exhibition_mysql_data:

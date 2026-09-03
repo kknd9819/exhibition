@@ -1,0 +1,8 @@
+import { desc, eq } from 'drizzle-orm';
+import { AdminShell } from '@/components/admin-shell';
+import { ContentWorkspace } from '@/components/content-workspace';
+import { getDb } from '@/db';
+import { assetReferences, assets, contentItems, contentVersions, documentItems, registrationActivities } from '@/db/schema';
+import { getCurrentEventContext } from '@/lib/current-event';
+
+export default async function ContentPage(){const {current}=await getCurrentEventContext();if(!current)return <AdminShell active="/content" title="内容、素材与文档"><section className="panel">请先选择展会。</section></AdminShell>;const db=getDb();const [assetRows,refs,items,versions,documents,activities]=await Promise.all([db.select().from(assets).where(eq(assets.eventId,current.id)).orderBy(desc(assets.createdAt)),db.select().from(assetReferences).where(eq(assetReferences.eventId,current.id)),db.select().from(contentItems).where(eq(contentItems.eventId,current.id)).orderBy(desc(contentItems.createdAt)),db.select().from(contentVersions).orderBy(desc(contentVersions.versionNo)),db.select().from(documentItems).where(eq(documentItems.eventId,current.id)).orderBy(desc(documentItems.createdAt)),db.select().from(registrationActivities).where(eq(registrationActivities.eventId,current.id))]);return <AdminShell active="/content" title="内容、素材与文档"><ContentWorkspace eventSlug={current.slug} initialAssets={assetRows.map(item=>({...item,referenceCount:refs.filter(ref=>ref.assetId===item.id).length}))} initialContents={items.map(item=>({...item,versions:versions.filter(version=>version.itemId===item.id)}))} initialDocuments={documents} activities={activities.map(item=>({id:item.id,name:item.name}))}/></AdminShell>}

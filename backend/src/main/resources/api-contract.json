@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "source": "legacy Next API snapshot 1ce7d17",
+  "count": 107,
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/api/agenda/guests"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/agenda/guests/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/agenda/publish"
+    },
+    {
+      "method": "POST",
+      "path": "/api/agenda/sessions"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/agenda/versions/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/analytics/export"
+    },
+    {
+      "method": "POST",
+      "path": "/api/analytics/reports/runs"
+    },
+    {
+      "method": "GET",
+      "path": "/api/analytics/reports/runs/{id}/download"
+    },
+    {
+      "method": "POST",
+      "path": "/api/analytics/snapshots/run"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/logout"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/otp/send"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/otp/verify"
+    },
+    {
+      "method": "POST",
+      "path": "/api/checkin/{id}/reverse"
+    },
+    {
+      "method": "POST",
+      "path": "/api/checkin/execute"
+    },
+    {
+      "method": "GET",
+      "path": "/api/checkin/lookup"
+    },
+    {
+      "method": "POST",
+      "path": "/api/company-workspace/applications"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/company-workspace/appointments/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/company-workspace/exhibitors/{id}/appointments"
+    },
+    {
+      "method": "POST",
+      "path": "/api/company-workspace/exhibitors/{id}/matching-posts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/company-workspace/exhibitors/{id}/products"
+    },
+    {
+      "method": "POST",
+      "path": "/api/company-workspace/exhibitors/{id}/profile"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/company-workspace/inquiries/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/company-workspace/notifications/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/company-workspace/notifications/read-all"
+    },
+    {
+      "method": "POST",
+      "path": "/api/company-workspace/products/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/content/assets"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/content/assets/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/content/documents"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/content/documents/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/content/documents/{id}/download"
+    },
+    {
+      "method": "POST",
+      "path": "/api/content/items"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/content/items/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/content/items/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/current-event"
+    },
+    {
+      "method": "GET",
+      "path": "/api/data-assets/exports"
+    },
+    {
+      "method": "POST",
+      "path": "/api/data-assets/exports"
+    },
+    {
+      "method": "GET",
+      "path": "/api/data-assets/exports/{id}/download"
+    },
+    {
+      "method": "GET",
+      "path": "/api/data-assets/imports"
+    },
+    {
+      "method": "POST",
+      "path": "/api/data-assets/imports"
+    },
+    {
+      "method": "POST",
+      "path": "/api/data-assets/imports/{id}/commit"
+    },
+    {
+      "method": "GET",
+      "path": "/api/data-assets/imports/{id}/errors"
+    },
+    {
+      "method": "POST",
+      "path": "/api/data-assets/merge"
+    },
+    {
+      "method": "POST",
+      "path": "/api/data-assets/merge-preview"
+    },
+    {
+      "method": "POST",
+      "path": "/api/data-assets/merges/{id}/unmerge"
+    },
+    {
+      "method": "POST",
+      "path": "/api/enterprise-auth/logout"
+    },
+    {
+      "method": "GET",
+      "path": "/api/enterprise-auth/me"
+    },
+    {
+      "method": "POST",
+      "path": "/api/enterprise-auth/otp/send"
+    },
+    {
+      "method": "POST",
+      "path": "/api/enterprise-auth/otp/verify"
+    },
+    {
+      "method": "GET",
+      "path": "/api/events"
+    },
+    {
+      "method": "POST",
+      "path": "/api/events"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/events/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/events/{id}/copy"
+    },
+    {
+      "method": "POST",
+      "path": "/api/exhibitors"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/exhibitors/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/exhibitors/{id}/contact-handoff/challenge"
+    },
+    {
+      "method": "POST",
+      "path": "/api/exhibitors/{id}/contact-handoff/complete"
+    },
+    {
+      "method": "GET",
+      "path": "/api/governance/audit-logs"
+    },
+    {
+      "method": "GET",
+      "path": "/api/governance/recycle-bin"
+    },
+    {
+      "method": "POST",
+      "path": "/api/governance/recycle-bin/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/iam/employees"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/iam/employees/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/iam/members"
+    },
+    {
+      "method": "POST",
+      "path": "/api/iam/members"
+    },
+    {
+      "method": "POST",
+      "path": "/api/inquiries"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/inquiries/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/localization/portal-translations"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/localization/portal-translations/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/marketing/channels"
+    },
+    {
+      "method": "GET",
+      "path": "/api/marketing/channels/{id}/qr"
+    },
+    {
+      "method": "POST",
+      "path": "/api/marketing/plans"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/marketing/targets/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/matching/appointments"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/matching/appointments/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/matching/batches"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/matching/batches/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/matching/my-schedule"
+    },
+    {
+      "method": "POST",
+      "path": "/api/matching/posts"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/matching/posts/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/me"
+    },
+    {
+      "method": "POST",
+      "path": "/api/messages/deliveries/{id}/retry"
+    },
+    {
+      "method": "POST",
+      "path": "/api/messages/tasks"
+    },
+    {
+      "method": "POST",
+      "path": "/api/messages/templates"
+    },
+    {
+      "method": "POST",
+      "path": "/api/messages/unsubscribe"
+    },
+    {
+      "method": "GET",
+      "path": "/api/operations/health-summary"
+    },
+    {
+      "method": "POST",
+      "path": "/api/portal/pages/{id}/versions"
+    },
+    {
+      "method": "POST",
+      "path": "/api/portal/pages/{id}/withdraw"
+    },
+    {
+      "method": "POST",
+      "path": "/api/products"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/products/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/public-auth/logout"
+    },
+    {
+      "method": "GET",
+      "path": "/api/public-auth/me"
+    },
+    {
+      "method": "POST",
+      "path": "/api/public-auth/otp/send"
+    },
+    {
+      "method": "POST",
+      "path": "/api/public-auth/otp/verify"
+    },
+    {
+      "method": "POST",
+      "path": "/api/public-auth/wechat/simulate"
+    },
+    {
+      "method": "POST",
+      "path": "/api/public-matching/appointments"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/public-matching/appointments/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/public-matching/posts"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/public-notifications/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/public-notifications/read-all"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/public-registrations/records/{id}/profile"
+    },
+    {
+      "method": "GET",
+      "path": "/api/registrations/activities/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/registrations/activities/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/registrations/activities/{id}/records"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/registrations/records/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/reviews"
+    },
+    {
+      "method": "POST",
+      "path": "/api/reviews"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/reviews/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tracking/visit"
+    }
+  ]
+}

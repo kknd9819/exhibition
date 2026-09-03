@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS promotion_channels (id TEXT PRIMARY KEY,event_id TEXT NOT NULL REFERENCES events(id),code TEXT NOT NULL,name TEXT NOT NULL,channel_type TEXT NOT NULL,owner_name TEXT NOT NULL,target_path TEXT NOT NULL,status TEXT NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE UNIQUE INDEX IF NOT EXISTS uidx_channel_event_code ON promotion_channels(event_id,code);
+CREATE INDEX IF NOT EXISTS idx_channel_event_status ON promotion_channels(event_id,status);
+CREATE TABLE IF NOT EXISTS visitor_first_touches (id TEXT PRIMARY KEY,event_id TEXT NOT NULL REFERENCES events(id),browser_key TEXT NOT NULL,channel_id TEXT NOT NULL REFERENCES promotion_channels(id),landing_page TEXT NOT NULL,first_at TEXT NOT NULL);
+CREATE UNIQUE INDEX IF NOT EXISTS uidx_first_touch_event_browser ON visitor_first_touches(event_id,browser_key);
+CREATE TABLE IF NOT EXISTS channel_visit_history (id TEXT PRIMARY KEY,event_id TEXT NOT NULL REFERENCES events(id),browser_key TEXT NOT NULL,channel_id TEXT NOT NULL REFERENCES promotion_channels(id),landing_page TEXT NOT NULL,occurred_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS idx_channel_visits_event_time ON channel_visit_history(event_id,occurred_at);
+CREATE TABLE IF NOT EXISTS channel_bindings (id TEXT PRIMARY KEY,event_id TEXT NOT NULL REFERENCES events(id),record_type TEXT NOT NULL,record_id TEXT NOT NULL,channel_id TEXT NOT NULL REFERENCES promotion_channels(id),bound_at TEXT NOT NULL);
+CREATE UNIQUE INDEX IF NOT EXISTS uidx_channel_binding_record ON channel_bindings(record_type,record_id);
+CREATE TABLE IF NOT EXISTS conversion_events (id TEXT PRIMARY KEY,event_id TEXT NOT NULL REFERENCES events(id),channel_id TEXT NOT NULL REFERENCES promotion_channels(id),conversion_type TEXT NOT NULL,object_id TEXT NOT NULL,dedup_key TEXT NOT NULL,occurred_at TEXT NOT NULL);
+CREATE UNIQUE INDEX IF NOT EXISTS uidx_conversion_dedup ON conversion_events(dedup_key);
+CREATE INDEX IF NOT EXISTS idx_conversion_channel_type ON conversion_events(channel_id,conversion_type);
+CREATE TABLE IF NOT EXISTS recruitment_plans (id TEXT PRIMARY KEY,event_id TEXT NOT NULL REFERENCES events(id),name TEXT NOT NULL,target_type TEXT NOT NULL,owner_name TEXT NOT NULL,start_at TEXT,end_at TEXT,status TEXT NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS idx_recruitment_plans_event ON recruitment_plans(event_id);
+CREATE TABLE IF NOT EXISTS recruitment_targets (id TEXT PRIMARY KEY,plan_id TEXT NOT NULL REFERENCES recruitment_plans(id),source TEXT NOT NULL,target_ref TEXT,display_name TEXT NOT NULL,assignee_name TEXT NOT NULL,stage TEXT NOT NULL,snapshot_json TEXT NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS idx_recruitment_targets_plan_stage ON recruitment_targets(plan_id,stage);
